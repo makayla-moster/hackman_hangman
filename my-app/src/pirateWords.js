@@ -187,8 +187,8 @@ var Pirate_Words = [
   "weapons"
 ]
 
-function randomWord() {
-  return Pirate_Words[Math.floor(Math.random() * ENGLISH_WORDS.length)];
-}
+export default function randomWord() {
+  return Pirate_Words[Math.floor(Math.random() * Pirate_Words.length)];
+};
 
-export { randomWord };
+// export default { randomWord };

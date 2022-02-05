@@ -5,13 +5,6 @@ export function showNotification(setter) {
   }, 2000);
 }
 
-export async function getWord(url){
-  var response = await fetch(url)
-  .then(response => response.json())
-  .then(data => data.word.toLowerCase());
-  return response
-}
-
 export function checkWin(correct, wrong, word) {
   let status = 'win';
 

@@ -16,7 +16,7 @@ const Popup = ({correctLetters, wrongLetters, selectedWord, setPlayable, playAga
   } else if( checkWin(correctLetters, wrongLetters, selectedWord) === 'lose' ) {
     finalMessage = "The cap'n has been sent to Davy Jones' locker...";
     image = pngL;
-    finalMessageRevealWord = `...the word was: ${selectedWord}`;
+    finalMessageRevealWord = `The lost booty was: ${selectedWord}`;
     playable = false;
   }
 
