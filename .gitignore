@@ -2,3 +2,4 @@
 /my-app
 package-lock.json
 package.json
+.env
