@@ -3,8 +3,44 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap" rel="stylesheet" type="text/css">
   <script type="text/javascript" src="script.js"></script>
+  <script type="module">
+import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+</script>
 </head>
 <body>
   <h1 style="font-size: xxx-large;">Hangman</h1>
-  <p>Yo ho! Help save thy pirate cap'n by findin' the correct word before he's hanged at the gallows!</p>
+  <p class="start" id="hangm_start">Yo ho! Help save thy pirate cap'n by findin' the correct word before he's hanged at the gallows!</p>
+  <div id="hangm">
+
+                <div style="height: 2em; margin-bottom: 1em;">
+                    <div id="hangm_end" class="h"></div>
+                </div>
+
+                <div id="hangm_animation">
+                  <div id="hangm_Wrong" class="h"></div>
+                </div>
+
+                <div id="hangm_guessbox" style="height: 6em;" class="h">
+                    <div style="height: 3em;">
+                        <div id="hangm_word"></div>
+                    </div>
+                    <input class="no-outline" maxlength="1" id="guess" onkeyup="Hangman.guess(this.value); this.value=''; return false;" type="text" placeholder="Enter a Letter...">
+                </div>
+
+                <div style="height: 4em;" id="hangm_gbox" class="h">
+                  Yer Guesses: <br>
+                    <div id="hangm_guesses" class="h"></div>
+                </div>
+
+                    <div id="wording" class="wording">
+                      Are ye a landlubber (easy mode), pirate crewmate (pirate mode), or a pirate captain (hard mode)? <br>
+                        <img src="./imgs/Landlubber.png" style="cursor: pointer; padding-right:5%;" width="200" height="200" onclick="Hangman.reset('easy'); return false;" alt=""> <img src="./imgs/Crew.png" style="cursor: pointer; padding-right:5%;" width="200" height="200" onclick="Hangman.reset('medium'); return false;" alt="">    <img src="./imgs/Captain.png" style="cursor: pointer;" width="200" height="200" onclick="Hangman.reset('hard'); return false;" alt="">
+
+
+                        <!-- Click the bottle to spin again! <br>
+                        <img src="./imgs/Again.png" style="cursor: pointer;" width="200" height="200" onclick="Hangman.reset(); return false;" alt=""> -->
+                        <!-- <button type="button" id="btn-start" class="btn-lg btn-info" onclick="Hangman.reset(); return false;" >New Game</button> -->
+                    </div>
+
+        </div>
 </body>
