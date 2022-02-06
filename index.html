@@ -19,9 +19,15 @@
 
                 <div id="hangm_guessbox" style="height: 6em;" class="h">
                     <div style="height: 3em;">
-                        <div id="hangm_word"></div>
+                        <div id="hangm_word" style="letter-spacing: 1em;"></div>
                     </div>
-                    <input class="no-outline" maxlength="1" id="guess" onkeyup="Hangman.guess(this.value); this.value=''; return false;" type="text" placeholder="Enter a Letter...">
+                    <input class="no-outline" style="line-height: 3;
+                    width:100;
+                    border-top-style: hidden;
+                    border-right-style: hidden;
+                    border-left-style: hidden;
+                    border-bottom-style: groove;
+                    background-color: #eee;" maxlength="1" id="guess" onkeyup="Hangman.guess(this.value); this.value=''; return false;" type="text" placeholder="Enter a Letter...">
                 </div>
 
                 <div style="height: 4em;" id="hangm_gbox" class="h">
